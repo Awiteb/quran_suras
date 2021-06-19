@@ -6,32 +6,6 @@ class Quran_suras():
     def __init__(self,):
         self.API = "https://www.mp3quran.net/api/"
     
-    def __get_sura(self, sura_number:int, amount:int):
-        """get sura by sura_number
-
-        Args:
-            sura_number (int): number of sura
-            amount (int): amount of suras
-
-        Returns:
-            dict: dictionary of suras
-        """
-        suras_dict = {"sura_name":self.get_sura_name(sura_number),
-                        "result":[]
-                        }
-        for ob in json.loads(requests.get(self.API+"_arabic.php").text)['reciters']:
-            if len(suras_dict['result']) != amount:
-                if str(sura_number) in ob['suras']:
-                    sura_dict = {"reader":ob['name'],
-                                    "url":self.__get_url(sura_number, ob['Server'])
-                                    }
-                    suras_dict['result'].append(sura_dict)
-                else:
-                    pass
-            else:
-                break
-        return suras_dict
-    
     def get_sura_by_name(self, sura_name:str, amount:int):
         """ get sura by name
 
@@ -56,18 +30,6 @@ class Quran_suras():
             dict: dictionary of suras
         """
         return self.__get_sura(sura_number, amount)
-    
-    def __spell_checker(self, sura_name:str, suras:list):
-        """use difflib.get_close_matches to extract the nearest sura from the suras that matches the sura_name
-        Args:
-            sura_name (str): name of sura
-            suras (list): suras
-
-        Returns:
-            list: None if there is no match or a list of suras that match
-        """
-        sura =  difflib.get_close_matches(sura_name, map(self.__strip_tashkeel, suras))
-        return sura if sura else None
     
     def get_sura_name(self, sura_number:int):
         """get sura name by number
@@ -107,6 +69,32 @@ class Quran_suras():
             spell_checker = self.__spell_checker(sura_name, list(suras_ids.keys()))
             raise Exception(f"Invalid sura name: '{sura_name}' not found {(', did you mean '+' or '.join(spell_checker)) if spell_checker else ''}")
     
+    def __get_sura(self, sura_number:int, amount:int):
+        """get sura by sura_number
+
+        Args:
+            sura_number (int): number of sura
+            amount (int): amount of suras
+
+        Returns:
+            dict: dictionary of suras
+        """
+        suras_dict = {"sura_name":self.get_sura_name(sura_number),
+                        "result":[]
+                        }
+        for ob in json.loads(requests.get(self.API+"_arabic.php").text)['reciters']:
+            if len(suras_dict['result']) != amount:
+                if str(sura_number) in ob['suras']:
+                    sura_dict = {"reader":ob['name'],
+                                    "url":self.__get_url(sura_number, ob['Server'])
+                                    }
+                    suras_dict['result'].append(sura_dict)
+                else:
+                    pass
+            else:
+                break
+        return suras_dict
+    
     def __strip_tashkeel(self, text):
         """Strip vowels from a text, include Shadda.
         this function from 
@@ -126,6 +114,18 @@ class Quran_suras():
         for char in TASHKEEL:
             text = text.replace(char, '')
         return text
+    
+    def __spell_checker(self, sura_name:str, suras:list):
+        """use difflib.get_close_matches to extract the nearest sura from the suras that matches the sura_name
+        Args:
+            sura_name (str): name of sura
+            suras (list): suras
+
+        Returns:
+            list: None if there is no match or a list of suras that match
+        """
+        sura =  difflib.get_close_matches(sura_name, map(self.__strip_tashkeel, suras))
+        return sura if sura else None
     
     def __get_url(self, sura_number:int, server:str):
         """ Return the url of sura
