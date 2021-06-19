@@ -137,6 +137,17 @@ class Quran_suras():
         Returns:
             str: Sura link in mp3 extension
         """
-        length = len(str(sura_number))
-        sura_number = ('0' if length == 2 else '00' if length == 1 else '')+str(sura_number)
+        sura_number = self.__get_number(sura_number)
         return f"{server}/{sura_number}.mp3"
+    
+    def __get_number(self, sura_number:int):
+        """Return number with zero if length smaller than 3
+
+        Args:
+            sura_number (int): number
+
+        Returns:
+            str: number with zero if length smaller than 3
+        """
+        length = len(str(sura_number))
+        return ('0' if length == 2 else '00' if length == 1 else '')+str(sura_number)
