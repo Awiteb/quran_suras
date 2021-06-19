@@ -5,6 +5,8 @@ A class based on the API of the [mp3quran](https://www.mp3quran.net), which help
 ## Features
 * get surah by number
 * get surah by name
+* get surah name by number
+* get surah number by name
 
 ## Usage
 you can find examples [here](https://codeberg.org/Awiteb/quran_suras.py/examples)
