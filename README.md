@@ -49,6 +49,7 @@ pip3 install quran_suras
 * get surah name by number
 * get surah number by name
 * get quran page url by number
+* get islamic radios by language
 
 ## Usage
 
@@ -199,7 +200,9 @@ print(radios)
 ## History
 * **1.0.0**: added [get_sura_by_number, get_sura_by_name, get_sura_name, get_sura_number, get_page]
 
-* **1.1.0**: add get_radios function, is help you to get islamic radios
+* **1.1.0**: add get_radios function, is help you to get islamic radios.
+
+* **1.1.1**L add islamic radios future.
 
 ## LICENSE
 [GPLv3](https://www.gnu.org/licenses/gpl-3.0.html)
