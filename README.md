@@ -8,6 +8,8 @@ A python [method](https://codeberg.org/Awiteb/quran_suras/src/branch/master/qura
 
 [Usage](https://codeberg.org/Awiteb/quran_suras.py#usage)
 
+[History](https://codeberg.org/Awiteb/quran_suras.py#history)
+
 [LICENSE](https://codeberg.org/Awiteb/quran_suras.py#license)
 
 ## Installation
@@ -87,6 +89,8 @@ page = quran_suras.get_page(page_number=601)
 print(page) # https://www.mp3quran.net/api/quran_pages_arabic/601.png
 ```
 
+## History
+* **1.0.0**: added [get_sura_by_number, get_sura_by_name, get_sura_name, get_sura_number, get_page]
 
 ## LICENSE
 [GPLv3](https://www.gnu.org/licenses/gpl-3.0.html)
