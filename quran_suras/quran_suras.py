@@ -206,8 +206,3 @@ class QuranSuras():
         """
         length = len(str(sura_number))
         return ('0' if length == 2 else '00' if length == 1 else '')+str(sura_number)
-
-quran_suras = QuranSuras()
-
-radios = quran_suras.get_radios('een', 3)
-print(radios)
