@@ -87,6 +87,43 @@ class QuranSuras():
         else:
             raise Exception("Invalid page number: {} not found".format(page_number))
     
+    def get_radios(self, language:str, amount:int):
+        """Return islamic radio of language.
+            languages should in [ar,bn,bs,cn,de,
+                en,es,fa,fr,ha,id,ml,pt,ru,
+                    sw,tg,th,tl,tr,ug,ur,zh]
+        Args:
+            language (str): language
+            amount (int): the amount of radios
+
+        Raises:
+            Exception: language not found
+
+        Returns:
+            dict: dictionary of radios
+        """
+        radios_dict = {"language":language,
+                            "result":[]}
+        lang_list = [
+                    'ar', 'bn', 'bs', 'cn', 'de', 
+                    'en', 'es', 'fa', 'fr', 'ha', 
+                    'id', 'ml', 'pt', 'ru', 'sw', 
+                    'tg', 'th', 'tl', 'tr', 'ug', 
+                    'ur', 'zh'
+                    ]
+        if language in lang_list:
+            for ob in json.loads(requests.get(f"{self.API}radio/radio_{language}.json").text)['Radios']:
+                if len(radios_dict['result']) != amount:
+                    radio = {"name":ob['Name'],
+                                "url":ob['URL'].strip(';')
+                                }
+                    radios_dict['result'].append(radio)
+                else:
+                    break
+            return radios_dict
+        else:
+            raise Exception("Invalid language: language not found, this is found languages %s" % ','.join(lang_list))
+    
     def __get_sura(self, sura_number:int, amount:int):
         """get sura by sura_number
 
@@ -169,3 +206,8 @@ class QuranSuras():
         """
         length = len(str(sura_number))
         return ('0' if length == 2 else '00' if length == 1 else '')+str(sura_number)
+
+quran_suras = QuranSuras()
+
+radios = quran_suras.get_radios('een', 3)
+print(radios)
