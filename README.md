@@ -169,5 +169,7 @@ https://www.mp3quran.net/api/quran_pages_arabic/601.png
 ## History
 * **1.0.0**: added [get_sura_by_number, get_sura_by_name, get_sura_name, get_sura_number, get_page]
 
+* **1.1.0**: add get_radios function, is help you to get islamic radios
+
 ## LICENSE
 [GPLv3](https://www.gnu.org/licenses/gpl-3.0.html)
