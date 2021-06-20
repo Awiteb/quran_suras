@@ -1,6 +1,8 @@
 # quran_suras
 
-A class based on the API of the [mp3quran](https://www.mp3quran.net), which helps you to fetch the surahs of the Qur’an via the surah number or name 
+A library based on the API of the [mp3quran](https://www.mp3quran.net), which helps you to fetch the surahs of the Qur’an via the surah number or name 
+
+[Installation](https://codeberg.org/Awiteb/quran_suras.py#installation)
 
 [Features](https://codeberg.org/Awiteb/quran_suras.py#features)
 
@@ -10,10 +12,10 @@ A class based on the API of the [mp3quran](https://www.mp3quran.net), which help
 
 ## Installation
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install QuranSuras.
+Use the package manager [pip](https://pip.pypa.io/en/stable/) to install quran_suras.
 
 ```bash
-pip3 install QuranSuras
+pip3 install quran_suras
 ```
 
 ## Features
