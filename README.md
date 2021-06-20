@@ -165,6 +165,36 @@ https://www.mp3quran.net/api/quran_pages_arabic/601.png
 </details>
 <br><br>
 
+**get radios by language:**
+```python
+from quran_suras import QuranSuras
+
+quran_suras = QuranSuras()
+
+radios = quran_suras.get_radios('en', 3)
+print(radios) 
+```
+
+<details>
+<summary> Example Result</summary>
+
+```json
+{
+  'language': 'en', 
+  'result': [
+    {'name': '---Amazing short Recitations---', 
+      'url': 'http://live.mp3quran.net:9702/'}, 
+    {'name': '--Quran Tafseer--', 
+      'url': 'http://live.mp3quran.net:9718/'}, 
+    {'name': '-Beautiful Recitations-', 
+      'url': 'http://live.mp3quran.net:9992/'}
+  ]
+}
+```
+
+</details>
+<br><br>
+
 
 ## History
 * **1.0.0**: added [get_sura_by_number, get_sura_by_name, get_sura_name, get_sura_number, get_page]
