@@ -1,6 +1,6 @@
 # quran_suras
 
-A library based on the API of the [mp3quran](https://www.mp3quran.net), which helps you to fetch the surahs of the Qur’an via the surah number or name and more
+A python [method](https://codeberg.org/Awiteb/quran_suras/src/branch/master/quran_suras/quran_suras.py) based on the API of the [mp3quran](https://www.mp3quran.net), which helps you to fetch the surahs of the Qur’an via the surah number or name and more
 
 [Installation](https://codeberg.org/Awiteb/quran_suras.py#installation)
 
