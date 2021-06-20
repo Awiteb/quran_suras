@@ -69,6 +69,24 @@ class Quran_suras():
             spell_checker = self.__spell_checker(sura_name, list(suras_ids.keys()))
             raise Exception(f"Invalid sura name: '{sura_name}' not found {(', did you mean '+' or '.join(spell_checker)) if spell_checker else ''}")
     
+    def get_page(self, page_number:int):
+        """ Return url of page by page_number
+
+        Args:
+            page_number (int): number of page
+
+        Raises:
+            Exception: if page_number bigger than 604 or smaller than 1
+
+        Returns:
+            str: url of page by page_number
+        """
+        if page_number > 0 and page_number <= 604:
+            page_number = self.__get_number(page_number)
+            return f"{self.API}quran_pages_arabic/{page_number}.png"
+        else:
+            raise Exception("Invalid page number: {} not found".format(page_number))
+    
     def __get_sura(self, sura_number:int, amount:int):
         """get sura by sura_number
 
