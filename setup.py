@@ -1,6 +1,6 @@
 import setuptools
 
-VERSION = "1.1.1"
+VERSION = "1.1.2"
 README_FILENAME = "README.md"
 KEYWORD = ['surah', 'sura', 'quran',]
 
