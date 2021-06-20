@@ -8,6 +8,14 @@ A class based on the API of the [mp3quran](https://www.mp3quran.net), which help
 
 [LICENSE](https://codeberg.org/Awiteb/quran_suras.py#license)
 
+## Installation
+
+Use the package manager [pip](https://pip.pypa.io/en/stable/) to install QuranSuras.
+
+```bash
+pip3 install QuranSuras
+```
+
 ## Features
 * get surah by number
 * get surah by name
@@ -22,9 +30,9 @@ A class based on the API of the [mp3quran](https://www.mp3quran.net), which help
 
 you can get surah by number like this
 ```python
-from quran_suras import Quran_suras
+from quran_suras import QuranSuras
 
-quran_suras = Quran_suras()
+quran_suras = QuranSuras()
 
 suras = quran_suras.get_sura_by_number(sura_number=12, amount=1)
 print(suras) # {
@@ -37,9 +45,9 @@ print(suras) # {
 ```
 you can get surah by name like this
 ```python
-from quran_suras import Quran_suras
+from quran_suras import QuranSuras
 
-quran_suras = Quran_suras()
+quran_suras = QuranSuras()
 
 suras = quran_suras.get_sura_by_name(sura_name="النحل", amount=1)
 print(suras) # {
@@ -52,27 +60,27 @@ print(suras) # {
 ```
 you can get surah name by number like this
 ```python
-from quran_suras import Quran_suras
+from quran_suras import QuranSuras
 
-quran_suras = Quran_suras()
+quran_suras = QuranSuras()
 
 sura_name = quran_suras.get_sura_name(sura_number=88)
 print(sura_name) # الغاشية
 ```
 you can get surah number by name like this
 ```python
-from quran_suras import Quran_suras
+from quran_suras import QuranSuras
 
-quran_suras = Quran_suras()
+quran_suras = QuranSuras()
 
 sura_number = quran_suras.get_sura_number(sura_name="النمل")
 print(sura_number) # 27
 ```
 you can get page from quran by page number like this
 ```python
-from quran_suras import Quran_suras
+from quran_suras import QuranSuras
 
-quran_suras = Quran_suras()
+quran_suras = QuranSuras()
 page = quran_suras.get_page(page_number=601)
 print(page) # https://www.mp3quran.net/api/quran_pages_arabic/601.png
 ```

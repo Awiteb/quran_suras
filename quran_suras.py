@@ -2,7 +2,7 @@ import requests
 import json
 import difflib
 
-class Quran_suras():
+class QuranSuras():
     def __init__(self,):
         self.API = "https://www.mp3quran.net/api/"
     
