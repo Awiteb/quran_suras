@@ -43,7 +43,7 @@ class QuranSuras():
         Returns:
             str: sura name
         """
-        if sura_number <= 114:
+        if sura_number <= 114 and sura_number > 0:
             for ob in json.loads(requests.get(self.API+"_arabic_sura.php").text)['Suras_Name']:
                 if ob['id'] == str(sura_number):
                     return self.__strip_tashkeel(ob['name'].strip())
