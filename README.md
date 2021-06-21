@@ -206,7 +206,7 @@ print(radios)
 
 * **1.1.2**: edit README.md
 
-* **1.1.3**: fixed  Fixed [#1](https://codeberg.org/Awiteb/quran_suras/issues/1) - conditional sentence bug
+* **1.1.3**: Fixed [#1](https://codeberg.org/Awiteb/quran_suras/issues/1) - conditional sentence bug
 
 * **1.1.4**: edit README.md
 
